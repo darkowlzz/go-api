@@ -63,6 +63,8 @@ type Controller struct {
 	// Cordon true if in an unschedulable state
 	Cordon bool `json:"unschedulable"`
 
+	Drain bool `json:"drain"`
+
 	// high level stats that combine info from all driver instances
 	CapacityStats CapacityStats `json:"capacityStats"`
 }

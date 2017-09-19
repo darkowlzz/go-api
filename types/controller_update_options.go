@@ -22,6 +22,8 @@ type ControllerUpdateOptions struct {
 	// Cordon sets the controler into an unschedulable state if true
 	Cordon bool `json:"unschedulable"`
 
+	Drain bool `json:"drain"`
+
 	// Health can only be updated to "left"
 	Health string `json:"health"`
 
