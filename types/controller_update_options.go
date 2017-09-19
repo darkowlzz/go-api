@@ -22,6 +22,9 @@ type ControllerUpdateOptions struct {
 	// Cordon sets the controler into an unschedulable state if true
 	Cordon bool `json:"unschedulable"`
 
+	// Health can only be updated to "left"
+	Health string `json:"health"`
+
 	// Context can be set with a timeout or can be used to cancel a request.
 	Context context.Context `json:"-"`
 }

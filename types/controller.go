@@ -23,6 +23,7 @@ const (
 
 	ControllerHealthStarting = "starting"
 	ControllerHealthOK       = "healthy"
+	ControllerHealthLeft     = "left"
 	ControllerHealthDegraded = "degraded"
 	ControllerHealthOffline  = "offline"
 )
