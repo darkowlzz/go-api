@@ -319,10 +319,10 @@ func TestPoolUpdate(t *testing.T) {
         "description": "This is the default pool",
         "default": true,
         "defaultDriver": "filesystem",
-        "controllerNames": [
-            "controller_a",
-            "controller_b",
-            "controller_c"
+        "nodeNames": [
+            "node_a",
+            "node_b",
+            "node_c"
         ],
         "driverNames": [
             "filesystem"
@@ -336,7 +336,7 @@ func TestPoolUpdate(t *testing.T) {
                 "config": {
                     "dataDir": "/var/lib/storageos/data"
                 },
-                "controllerName": "controller_a",
+                "nodeName": "node_a",
                 "poolID": "` + id + `",
                 "driverName": "filesystem",
                 "capacityStats": {
@@ -353,7 +353,7 @@ func TestPoolUpdate(t *testing.T) {
                 "config": {
                     "dataDir": "/var/lib/storageos/data"
                 },
-                "controllerName": "controller_b",
+                "nodeName": "node_b",
                 "poolID": "` + id + `",
                 "driverName": "filesystem",
                 "capacityStats": {
@@ -370,7 +370,7 @@ func TestPoolUpdate(t *testing.T) {
                 "config": {
                     "dataDir": "/var/lib/storageos/data"
                 },
-                "controllerName": "controller_c",
+                "nodeName": "node_c",
                 "poolID": "` + id + `",
                 "driverName": "filesystem",
                 "capacityStats": {
@@ -394,14 +394,14 @@ func TestPoolUpdate(t *testing.T) {
 	client := newTestClient(fakeRT)
 	pool, err := client.PoolUpdate(
 		types.PoolUpdateOptions{
-			ID:              id,
-			Name:            name,
-			Description:     "Unit test pool",
-			Default:         false,
-			DefaultDriver:   "x",
-			ControllerNames: []string{"controller_a", "controller_b", "controller_c"},
-			DriverNames:     []string{"driver_x", "driver_y", "driver_z"},
-			Active:          true,
+			ID:            id,
+			Name:          name,
+			Description:   "Unit test pool",
+			Default:       false,
+			DefaultDriver: "x",
+			NodeNames:     []string{"node_a", "node_b", "node_c"},
+			DriverNames:   []string{"driver_x", "driver_y", "driver_z"},
+			Active:        true,
 			Labels: map[string]string{
 				"foo": "baz",
 			},

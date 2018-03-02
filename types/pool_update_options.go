@@ -25,6 +25,10 @@ type PoolUpdateOptions struct {
 	// are multiple drivers in the storage pool.
 	DefaultDriver string `json:"defaultDriver"`
 
+	// NodeNames is a list of nodes that are participating in the
+	// storage pool.
+	NodeNames []string `json:"nodeNames"`
+
 	// ControllerNames is the list of controllers which are participating in
 	// the storage pool.
 	ControllerNames []string `json:"controllerNames"`
